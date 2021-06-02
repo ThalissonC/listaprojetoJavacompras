@@ -20,7 +20,7 @@ public class Compra implements Serializable {
     private String parcelas;
     private double valorTotal = quantidade * valorUnitario;
     private String data;
-    private String somaTotal;
+    //private String somaTotal;
 
     public Long getId() {
         return id;
@@ -62,13 +62,13 @@ public class Compra implements Serializable {
         this.valorTotal = valorTotal;
     }
 
-    public String getSomaTotal() {
-        return somaTotal;
-    }
+    //public String getSomaTotal() {
+     //   return somaTotal;
+    //}
 
-    public void setSomaTotal(String somaTotal) {
-        this.somaTotal = somaTotal;
-    }
+    //public void setSomaTotal(String somaTotal) {
+     //   this.somaTotal = somaTotal;
+    //}
 
     public String getCategoria() {
         return categoria;

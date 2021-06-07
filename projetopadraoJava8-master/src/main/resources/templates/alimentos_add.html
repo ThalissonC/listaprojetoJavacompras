@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <title>Adicionar Compras</title>
+    <title>Adicionar Alimentos</title>
 </head>
 <body>
 
 <div class="container" align="center">
-    <h1 class="text-center">Adicionar Compra</h1>
+    <h1 class="text-center">Adicionar Alimento</h1>
 
     <div class="p-3"></div>
-    <form style="width:400px" th:action="@{/compras/add}" th:object="${compra}" method="post">
+    <form style="width:400px" th:action="@{/alimentos/add}" th:object="${alimento}" method="post">
         <div class="mb-3">
             <label for="comprasId" class="form-label" align="right">ID</label>
             <input type="text" class="form-control" placeholder="ID" id="comprasId" th:field="*{id}">

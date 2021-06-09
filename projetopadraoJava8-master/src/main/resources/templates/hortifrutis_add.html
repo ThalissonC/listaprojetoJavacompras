@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <title>Adicionar Alimentos</title>
+    <title>Adicionar Hortifruti</title>
 </head>
 <body>
 
@@ -13,14 +13,14 @@
     <h1 class="text-center">Adicionar Alimento</h1>
 
     <div class="p-3"></div>
-    <form style="width:400px" th:action="@{/alimentos/add}" th:object="${alimento}" method="post">
+    <form style="width:400px" th:action="@{/hortifrutis/add}" th:object="${hortifruti}" method="post">
         <div class="mb-3">
-            <label for="comprasId" class="form-label" align="right">ID</label>
-            <input type="text" class="form-control" placeholder="ID" id="comprasId" th:field="*{id}">
+            <label for="hortifrutiId" class="form-label" align="right">ID</label>
+            <input type="text" class="form-control" placeholder="ID" id="hortifrutiId" th:field="*{id}">
         </div>
         <div class="mb-3">
-            <label for="comprasNome" class="form-label">NOME</label>
-            <input type="text" class="form-control" placeholder="Nome do Produto" id="comprasNome" th:field="*{nome}">
+            <label for="hortifrutiNome" class="form-label">NOME</label>
+            <input type="text" class="form-control" placeholder="Nome do Produto" id="hortifrutiNome" th:field="*{nome}">
         </div>
         <div class="mb-3">
             <label for="quantidadeID" class="form-label">QUANTIDADE</label>

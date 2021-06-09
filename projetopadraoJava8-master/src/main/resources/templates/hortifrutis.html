@@ -8,7 +8,7 @@
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="statics/style.css" rel="stylesheet">
 
-    <title>Lista De Alimentos</title>
+    <title>Lista De Hortifruti</title>
 
     <style>
 
@@ -57,7 +57,7 @@
                 <div class="row top-icon-right">
 
                         <!-- BACK -->
-                    <a th:href="@{/alimentos/index}" class="float">
+                    <a th:href="@{/hortifrutis/index}" class="float">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
                         </svg>
@@ -73,7 +73,7 @@
                     </a>
 
                 </div>
-                <h1 class="text-center">Alimentos</h1>
+                <h1 class="text-center">Hortifruti</h1>
 
                 <div class="col align-middle sp-3" style="">
                     <a th:href="add" class="text-danger float">
@@ -103,16 +103,16 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="alimento : ${alimentos}">
+                        <tr th:each="hortifruti : ${hortifrutis}">
                             <!-- <th scope="row" th:text="${compra.id}"></th> -->
-                            <td th:text="${alimento.nome}"></td>
-                            <td th:text="${alimento.quantidade}"></td>
+                            <td th:text="${hortifruti.nome}"></td>
+                            <td th:text="${hortifruti.quantidade}"></td>
                             <!-- <td th:text="${compra.categoria}"></td> -->
                             <!-- <td th:text="${compra.valorUnitario}"></td> -->
                             <!-- <td th:text="${compra.formaDePagamento}"></td> -->
                             <!-- <td th:text="${compra.valorTotal}"></td>  -->
                             <!-- <td th:text="${compra.parcelas}"></td> -->
-                            <td th:text="${alimento.data}"></td>
+                            <td th:text="${hortifruti.data}"></td>
                         </tr>
 
                         </tbody>

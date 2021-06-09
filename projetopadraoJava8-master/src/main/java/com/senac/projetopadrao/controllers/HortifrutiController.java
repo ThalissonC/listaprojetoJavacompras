@@ -1,7 +1,9 @@
 package com.senac.projetopadrao.controllers;
 
 import com.senac.projetopadrao.models.Alimento;
+import com.senac.projetopadrao.models.Hortifruti;
 import com.senac.projetopadrao.repositorys.AlimentoRepository;
+import com.senac.projetopadrao.repositorys.HortifrutiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
@@ -16,8 +18,8 @@ import java.util.ArrayList;
 
 
 
-@RequestMapping("/alimentos")
-public class AlimentoController {
+@RequestMapping("/hortifrutis")
+public class HortifrutiController {
 
     @RequestMapping("/index")
     public ModelAndView index(){
@@ -25,31 +27,31 @@ public class AlimentoController {
     }
 
     @Autowired
-    AlimentoRepository alimentoRepository;
+    HortifrutiRepository hortifrutiRepository;
 
     @GetMapping("/")
         public ModelAndView listaAlimentos() {
-            ModelAndView mv = new ModelAndView("alimentos");
+            ModelAndView mv = new ModelAndView("hortifrutis");
 
-            ArrayList<Alimento> alimentos = new ArrayList<>();
+            ArrayList<Hortifruti> hortifrutis = new ArrayList<>();
 
-            alimentos = (ArrayList<Alimento>) alimentoRepository.findAll();
+            hortifrutis = (ArrayList<Hortifruti>) hortifrutiRepository.findAll();
 
-            mv.addObject("alimentos", alimentos);
+            mv.addObject("hortifrutis", hortifrutis);
 
             return mv;
         }
 
     @GetMapping("/add")
-        public String addAlimentoPage(Alimento alimento) {
-        return "alimentos_add";
+        public String addHortifrutiPage(Hortifruti hortifruti) {
+        return "hortifrutis_add";
     }
 
     @PostMapping("/add")
-        public String addAlimento (@Validated Alimento alimento){
-        alimentoRepository.save(alimento);
+        public String addHortifruti (@Validated Hortifruti hortifruti){
+        hortifrutiRepository.save(hortifruti);
 
-        return "redirect:/alimentos/";
+        return "redirect:/hortifrutis/";
     }
 
 }

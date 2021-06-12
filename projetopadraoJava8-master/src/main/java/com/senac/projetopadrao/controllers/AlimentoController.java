@@ -40,12 +40,12 @@ public class AlimentoController {
             return mv;
         }
 
-    @GetMapping("/add")
-        public String addAlimentoPage(Alimento alimento) {
-        return "alimentos_add";
-    }
+  // @GetMapping("/add")
+    //    public String addAlimentoPage(Alimento alimento) {
+    //   return "alimentos";
+   // }
 
-    @PostMapping("/add")
+    @PostMapping("/")
         public String addAlimento (@Validated Alimento alimento){
         alimentoRepository.save(alimento);
 

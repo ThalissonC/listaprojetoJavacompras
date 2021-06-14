@@ -6,7 +6,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link href="statics/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
     <title>Lista De Alimentos</title>
 
@@ -82,7 +82,7 @@
 
                 <!-- ADD PAGE -->
                 <div class="col align-middle sp-3" style="">
-                    <a th:href="add" class="text-danger float" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <a th:href="add" class="text-danger float" data-bs-toggle="modal" data-bs-target="#addModal">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                              class="bi bi-plus-square" viewBox="0 0 16 16">
                             <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
@@ -90,88 +90,53 @@
                         </svg>
                     </a>
                     <!-- Modal -->
-                    <div class="modal fade text-center" id="staticBackdrop" data-bs-backdrop="static"
-                         data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog text-center">
-                            <div class="modal-content text-center">
-                                <div class="text-center">
-                                    <h5 class="text-center" id="staticBackdropLabel">Adicionar Alimento</h5>
-                                    <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+
+
+                    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <form th:action="@{/alimentos/addNew}" method="post">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Adicionar alimento</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-
                                 <div class="modal-body">
-                                    <div class="container">
-                                        <form style="width:400px" th:action="add" th:object="${alimento}" method="post">
 
-                                            <div class="mb-3">
-                                                <label for="comprasId" class="form-label" align="right">ID</label>
-                                                <input type="text" class="form-control" placeholder="ID" id="comprasId" th:field="*{id}">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="comprasNome" class="form-label">NOME</label>
-                                                <input type="text" class="form-control" placeholder="Nome do Produto"
-                                                       id="comprasNome" th:field="*{nome}">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="quantidadeID" class="form-label">QUANTIDADE</label>
-                                                <input type="text" class="form-control" id="quantidadeID" th:field="*{quantidade}">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="categoriaID" class="form-label">CATEGORIA</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder="Categoria do Produto" id="categoriaID" th:field="*{categoria}">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="valorUnitarioID" class="form-label">VALOR UNT.</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder="Valor de cada Produto" id="valorUnitarioID" th:field="*{valorUnitario}">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="formaDePagamentoID" class="form-label">FORMA DE
-                                                    PAGAMENTO</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder="Dinheiro, Boleto, PicPay, PIX, Cartão de Crédito"
-                                                       id="formaDePagamentoID" th:field="*{formaDePagamento}">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="parcelasID" class="form-label">PARCELAS</label>
-                                                <input type="text" class="form-control" placeholder="ex: 1x, 2x, 3x"
-                                                       id="parcelasID" th:field="*{parcelas}">
-                                            </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Id:</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="Id">
+                                        </div>
 
-                                            <div class="mb-3">
-                                                <label for="dateID" class="form-label">DATA</label>
-                                                <input type="text" placeholder="ex: 02-06" class="form-control"
-                                                       id="dateID">
-                                            </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Nome:</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="nome">
+                                        </div>
 
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Quantidade:</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="quantidade">
+                                        </div>
 
-                                        </form>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Valor:</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="valorUnitario">
+                                        </div>
+
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Data:</label>
+                                        <input type="text" placeholder="ex: 05-06-21" class="form-control text-center" id="recipient-name" name="data">
                                     </div>
 
                                 </div>
-
                                 <div class="modal-footer">
                                     <div class="container">
-                                    <div class="row p-3">
-                                            <div class="col-sm">
-                                                <input href="/alimentos/" type="submit" data-bs-dismiss="modal"
-                                                       class="btn text-light bg-dark"
-                                                       style="width:100%; padding-right: 20px;" value="Cancelar"/>
-
-                                            </div>
-                                            <div class="col-sm">
-                                                <input type="submit" onClick="window.location.reload();"
-                                                       class="btn text-light bg-danger"
-                                                       style="width:100%; padding-right: 20px;" value="Adicionar"/>
-                                            </div>
-
-                                        </div>
+                                        <button type="button" class="btn btn-warning text-light text-start" data-bs-dismiss="modal">Fechar</button>
+                                        <button type="submit" class="btn btn-dark text-end">Salvar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        </form>
                     </div>
 
 
@@ -232,6 +197,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/javascript.js"> </script>
+<script src="/js/jquery-3.5.1.min.js"> </script>
 
 
 </body>

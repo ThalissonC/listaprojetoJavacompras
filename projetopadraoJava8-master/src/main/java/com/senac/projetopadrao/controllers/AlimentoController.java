@@ -2,6 +2,7 @@ package com.senac.projetopadrao.controllers;
 
 import com.senac.projetopadrao.models.Alimento;
 import com.senac.projetopadrao.repositorys.AlimentoRepository;
+import com.senac.projetopadrao.services.AlimentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
@@ -50,6 +51,13 @@ public class AlimentoController {
         alimentoRepository.save(alimento);
 
         return "redirect:/alimentos/";
+    }
+
+    @RequestMapping("/addNew")
+    public String addNew(Alimento alimento){
+        alimentoRepository.save(alimento);
+        return "redirect:/alimentos";
+
     }
 
 }

@@ -6,7 +6,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="/css/style.css"/>-->
 
     <title>Menu</title>
 
@@ -67,19 +67,25 @@
 <br>
 <div class="row text-center">
     <div class="d-grid gap-2 col-6 mx-auto">
-        <input class="btn btn-primary" type="button" onclick="window.location.href='https://google.com';" value="Higiene" />
+        <a th:href="@{/limpezas/}" class="btn btn-primary text-light bg-primary float">
+            Limpeza
+        </a>
     </div>
 </div>
 <br>
 <div class="row text-center">
     <div class="d-grid gap-2 col-6 mx-auto">
-        <input class="btn btn-primary" type="button" onclick="window.location.href='https://google.com';" value="Limpeza" />
+        <a th:href="@{/higienes/}" class="btn btn-primary text-light bg-primary float">
+            Higiene
+        </a>
     </div>
 </div>
 <br>
 <div class="row text-center">
     <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" type="button">Açougue</button>
+        <a th:href="@{/acougues/}" class="btn btn-primary text-light bg-primary float">
+            Açougue
+        </a>
     </div>
 </div>
 <br>

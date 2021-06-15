@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="../static/js/main.js" th:src="@{/js/main.js}"></script>
     <title>Lista De Alimentos</title>
 
     <style>
@@ -89,8 +89,10 @@
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                         </svg>
                     </a>
-                    <!-- Modal -->
 
+                    <!------------ ADD MODAL ------------>
+                    <!----------------\/----------------->
+                    <!----------------\/----------------->
 
                     <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <form th:action="@{/alimentos/addNew}" method="post">
@@ -104,7 +106,7 @@
 
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Id:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name="Id">
+                                            <input type="text" class="form-control" id="recipient-name" name="id">
                                         </div>
 
                                         <div class="mb-3">
@@ -139,6 +141,47 @@
                         </form>
                     </div>
 
+                    <!------------ &EDIT MODAL ------------>
+                    <!----------------\/----------------->
+                    <!----------------\/----------------->
+
+                    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <form th:action="@{/alimentos/update" method="put">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editModalLabel">Editar alimento</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Valor</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="valorEdit">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Forma de Pagamento</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="formaDePagamentoEdit">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Data</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="dataEdit">
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="container">
+                                            <button type="button" class="btn btn-warning text-light text-start" data-bs-dismiss="modalEdit">Fechar</button>
+                                            <button type="submit" class="btn btn-dark text-end">Salvar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
 
                 </div>
 
@@ -146,7 +189,7 @@
                     <table class="table text-center">
                         <thead>
                         <tr>
-
+                            <th scope="col"> </th>
                             <th scope="col">Nome</th>
                             <th scope="col">Qtd.</th>
                             <!-- <th scope="col">Categoria</th> -->
@@ -155,6 +198,8 @@
                             <!-- <th scope="col">Valor Total</th> -->
                             <!--<th scope="col">Parcelas</th> -->
                             <th scope="col">Data</th>
+                            <th> <a class="btn btn-primary">Editar</a>
+                            </th>
 
 
                         </tr>
@@ -162,6 +207,7 @@
                         <tbody>
                         <tr th:each="alimento : ${alimentos}">
                             <!-- <th scope="row" th:text="${compra.id}"></th> -->
+                            <td class="text-info fw-bold"> <a th:href="${alimento.id}" class="float" data-bs-toggle="modal" data-bs-target="#editModal"> Detalhes </a> </td>
                             <td th:text="${alimento.nome}"></td>
                             <td th:text="${alimento.quantidade}"></td>
                             <!-- <td th:text="${compra.categoria}"></td> -->

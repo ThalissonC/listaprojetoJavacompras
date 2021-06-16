@@ -85,9 +85,9 @@ public class AlimentoController {
         return "redirect:/alimentos/";
     }
 */
-    @RequestMapping("/getOne")
+    @GetMapping("/getOne")
     @ResponseBody
-    public Optional<Alimento> getOne(Integer id){
+    public Alimento getOne(Integer id){
         return alimentoService.getOne(id);
 
     }

@@ -18,11 +18,12 @@ public class AlimentoService {
     @Autowired
     private AlimentoRepository alimentoRepository;
 
-    public Optional<Alimento> getOne(Integer id) {
-        return Optional.ofNullable(alimentoRepository.findAlimentoById(id));
+    public Alimento getOne(Integer id) {
+        return alimentoRepository.findAlimentoById(id);
     }
 
     public void update(Alimento alimento) {
+
         alimentoRepository.save(alimento);
     }
 

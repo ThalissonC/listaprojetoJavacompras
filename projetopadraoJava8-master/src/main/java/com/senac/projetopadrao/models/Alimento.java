@@ -13,14 +13,15 @@ public class Alimento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
-    private int quantidade;
+    private String quantidade; //int
     private String categoria;
-    private double valorUnitario;
+    private String valorUnitario; //double
     private String formaDePagamento;
     private String parcelas;
-    private double valorTotal = quantidade * valorUnitario;
+    //private double valorTotal = quantidade * valorUnitario;
     private String data;
     //private String somaTotal;
+
 
     public Integer getId() {
         return id;
@@ -38,29 +39,22 @@ public class Alimento implements Serializable {
         this.nome = nome;
     }
 
-    public int getQuantidade() {
+    public String getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
 
-    public double getValorUnitario() {
+    public String getValorUnitario() {
         return valorUnitario;
     }
 
-    public void setValorUnitario(double valorUnitario) {
+    public void setValorUnitario(String valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
 
-    public double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
 
     //public String getSomaTotal() {
      //   return somaTotal;

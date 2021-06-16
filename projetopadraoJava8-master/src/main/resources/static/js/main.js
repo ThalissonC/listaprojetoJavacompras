@@ -6,8 +6,9 @@ $('document').ready(function(){
         var href= $(this).attr('href');
 
         $.get(href, function(alimento, status){
-            $('#valorUnitarioEdit').val(alimento.valorUnitario);
-            $('#formaDePagamentoEdit').val(alimento.formaDePagamento);
+            $('#idEdit').val(alimento.id);
+            $('#nomeEdit').val(alimento.nome);
+            $('#quantidadeEdit').val(alimento.quantidade);
             $('#dataEdit').val(alimento.data);
 
         });

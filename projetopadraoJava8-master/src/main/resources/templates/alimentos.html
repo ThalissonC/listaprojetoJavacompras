@@ -10,7 +10,10 @@
 
 
     <!--<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"> </script>-->
-    <script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -122,19 +125,20 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="alimento : ${alimentos}">
-                                <!-- <th scope="row" th:text="${compra.id}"></th> -->
+                        <tr th:each="alimento : ${alimentos}">
+<!--                                 <th scope="row" th:text="${compra.id}"></th>-->
                                 <td class="text-info fw-bold"> <a th:href="@{/alimentos/getOne/(id=${alimento.id})}" class="float btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal"> Detalhes </a></td>
+<!--                                <td class="text-info fw-bold"> <a th:href="@{/alimento/${alimento.id}}" class="float btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal"> Detalhes </a></td>-->
                                 <td th:text="${alimento.id}"></td>
                                 <td th:text="${alimento.nome}"></td>
                                 <td th:text="${alimento.quantidade}"></td>
-                                <!-- <td th:text="${compra.categoria}"></td> -->
-                                <!-- <td th:text="${compra.valorUnitario}"></td> -->
-                                <!-- <td th:text="${compra.formaDePagamento}"></td> -->
-                                <!-- <td th:text="${compra.valorTotal}"></td>  -->
-                                <!-- <td th:text="${compra.parcelas}"></td> -->
+<!--                                 <td th:text="${compra.categoria}"></td>-->
+<!--                                 <td th:text="${compra.valorUnitario}"></td>-->
+<!--                                 <td th:text="${compra.formaDePagamento}"></td>-->
+<!--                                 <td th:text="${compra.valorTotal}"></td>-->
+<!--                                 <td th:text="${compra.parcelas}"></td>-->
                                 <td th:text="${alimento.data}"></td>
-                            </tr>
+                        </tr>
 
                             </tbody>
                         </table>

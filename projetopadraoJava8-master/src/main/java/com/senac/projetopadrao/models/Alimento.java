@@ -1,21 +1,29 @@
 package com.senac.projetopadrao.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Entity
+
 public class Alimento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String nome;
-    private String quantidade; //int
+    private int quantidade; //int
     private String categoria;
-    private String valorUnitario; //double
+    private double valorUnitario; //double
     private String formaDePagamento;
     private String parcelas;
     //private double valorTotal = quantidade * valorUnitario;
@@ -23,11 +31,11 @@ public class Alimento implements Serializable {
     //private String somaTotal;
 
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -39,22 +47,21 @@ public class Alimento implements Serializable {
         this.nome = nome;
     }
 
-    public String getQuantidade() {
+    public int getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(String quantidade) {
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
 
-    public String getValorUnitario() {
+    public double getValorUnitario() {
         return valorUnitario;
     }
 
-    public void setValorUnitario(String valorUnitario) {
+    public void setValorUnitario(double valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
-
 
     //public String getSomaTotal() {
      //   return somaTotal;

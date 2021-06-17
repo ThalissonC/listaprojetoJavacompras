@@ -87,8 +87,8 @@ public class AlimentoController {
 */
     @GetMapping("/getOne")
     @ResponseBody
-    public Alimento getOne(Integer id){
-        return alimentoService.getOne(id);
+    public String getOne(Long id){
+        return alimentoService.getOne(id).getNome();
 
     }
 

@@ -18,7 +18,7 @@ public class AlimentoService {
     @Autowired
     private AlimentoRepository alimentoRepository;
 
-    public Alimento getOne(Integer id) {
+    public Alimento getOne(Long id) {
         return alimentoRepository.findAlimentoById(id);
     }
 

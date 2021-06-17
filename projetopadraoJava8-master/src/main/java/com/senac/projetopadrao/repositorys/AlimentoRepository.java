@@ -11,9 +11,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AlimentoRepository extends CrudRepository<Alimento, Integer> {
+public interface AlimentoRepository extends CrudRepository<Alimento, Long> {
 
-    Alimento findAlimentoById(Integer id);
+    Alimento findAlimentoById(Long id);
     List<Alimento> findAlimentoByNome(String nome);
 
 

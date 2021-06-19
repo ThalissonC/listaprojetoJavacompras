@@ -4,10 +4,7 @@ import com.senac.projetopadrao.models.Alimento;
 import com.senac.projetopadrao.repositorys.AlimentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +33,21 @@ AlimentoRepository alimentoRepository;
                .orElse(ResponseEntity.notFound().build());
     }
 
+    @PutMapping(value="/alimento/{id}")
+    public ResponseEntity update(@PathVariable("id") Long id,
+                                 @RequestBody Alimento alimento) {
+        return alimentoRepository.findById(id)
+                .map(record -> {
+                    record.setId(alimento.getId());
+                    record.setNome(alimento.getNome());
+                    record.setQuantidade(alimento.getQuantidade());
+                    record.setData(alimento.getData());
 
+
+                    Alimento updated  = alimentoRepository.save(record);
+
+                    return ResponseEntity.ok().body(updated);
+                }).orElse(ResponseEntity.notFound().build());
+    }
 
 }

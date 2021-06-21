@@ -65,18 +65,45 @@ document.addEventListener("DOMContentLoaded" , function(event) {
         contentType: "application/json",
         success: function(resp) {
             console.log(resp);
+            window.location.reload();
         },
         error: function(error) {
             console.log(error);
         }
-
-
     })
-
-
-
-
  }
+
+ function deleteAlimento (event){
+
+     const id = $("#idEdit").val();
+     const nome = $("#nomeEdit").val();
+     const quantidade = $("#quantidadeEdit").val();
+     const data = $("#dataEdit").val();
+
+     const dados = {"id":id, "nome":nome, "quantidade":quantidade, "data":data}
+
+     console.log(dados);
+
+
+     const apiUrl = `/api/alimentos/alimento/${id}`;
+
+     $.ajax({
+         contentType: "application/json; charset=uft-8",
+         url: apiUrl,
+         type: "DELETE",
+         dataType: "json",
+         data: JSON.stringify(dados),
+         contentType: "application/json",
+         success: function(resp) {
+             console.log(resp);
+             window.location.reload();
+         },
+         error: function(error) {
+             console.log(error);
+             window.location.reload();
+         }
+     })
+  }
 
 
 

@@ -2,6 +2,7 @@ package com.senac.projetopadrao.controllers;
 
 import com.senac.projetopadrao.models.Alimento;
 import com.senac.projetopadrao.repositorys.AlimentoRepository;
+import jdk.internal.net.http.common.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -50,4 +51,16 @@ AlimentoRepository alimentoRepository;
                 }).orElse(ResponseEntity.notFound().build());
     }
 
+    @DeleteMapping(path ={"/alimento/{id}"})
+    public ResponseEntity <?> delete(@PathVariable Long id) {
+        return alimentoRepository.findById(id)
+                .map(record -> {
+                    alimentoRepository.deleteById(id);
+                    return ResponseEntity.ok().build();
+                }).orElse(ResponseEntity.notFound().build());
+    }
+
 }
+
+
+

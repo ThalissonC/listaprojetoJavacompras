@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded" , function(event) {
            $("#idEdit").val(r.id);
            $("#nomeEdit").val(r.nome);
            $("#quantidadeEdit").val(r.quantidade);
+           $("#valorUnitarioEdit").val(r.valorUnitario);
            $("#dataEdit").val(r.data);
 
         });
@@ -46,9 +47,10 @@ document.addEventListener("DOMContentLoaded" , function(event) {
     const id = $("#idEdit").val();
     const nome = $("#nomeEdit").val();
     const quantidade = $("#quantidadeEdit").val();
+    const valor = $("#valorUnitarioEdit").val();
     const data = $("#dataEdit").val();
 
-    const dados = {"id":id, "nome":nome, "quantidade":quantidade, "data":data}
+    const dados = {"id":id, "nome":nome, "quantidade":quantidade, "valorUnitario":valor, "data":data}
 
     console.log(dados);
 

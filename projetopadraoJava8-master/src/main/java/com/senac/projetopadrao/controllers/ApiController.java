@@ -2,13 +2,11 @@ package com.senac.projetopadrao.controllers;
 
 import com.senac.projetopadrao.models.Alimento;
 import com.senac.projetopadrao.repositorys.AlimentoRepository;
-import jdk.internal.net.http.common.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping({"/api/alimentos"})
@@ -42,6 +40,7 @@ AlimentoRepository alimentoRepository;
                     record.setId(alimento.getId());
                     record.setNome(alimento.getNome());
                     record.setQuantidade(alimento.getQuantidade());
+                    record.setValorUnitario(alimento.getValorUnitario());
                     record.setData(alimento.getData());
 
 

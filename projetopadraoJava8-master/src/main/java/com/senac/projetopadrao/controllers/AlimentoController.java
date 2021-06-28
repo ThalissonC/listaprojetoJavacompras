@@ -61,7 +61,7 @@ public class AlimentoController {
     @RequestMapping("/addNew")
     public String addNew(Alimento alimento){
         alimentoRepository.save(alimento);
-        return "redirect:/alimentos";
+        return "redirect:/alimentos/";
 
     }
 

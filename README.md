@@ -1,4 +1,4 @@
-# listaprojetoJavacompras
+# Projeto Lista de Compras
 IDE utilizada para desenvolvimento: JetBrains IntelliJ IDEA Communnity Edition.
 
 Para utilizar o projeto basta primeiramente abrir o projeto em uma IDE que suporte o Java e executar o ProjetoPadrãoApplication e logo depois seguir os passos abaixo:

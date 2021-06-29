@@ -47,6 +47,14 @@ public class Alimento implements Serializable {
         this.nome = nome;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     public int getQuantidade() {
         return quantidade;
     }
@@ -71,13 +79,6 @@ public class Alimento implements Serializable {
      //   this.somaTotal = somaTotal;
     //}
 
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
 
     public String getFormaDePagamento() {
         return formaDePagamento;

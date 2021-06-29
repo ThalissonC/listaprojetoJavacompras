@@ -39,6 +39,7 @@ AlimentoRepository alimentoRepository;
                 .map(record -> {
                     record.setId(alimento.getId());
                     record.setNome(alimento.getNome());
+                    record.setCategoria(alimento.getCategoria());
                     record.setQuantidade(alimento.getQuantidade());
                     record.setValorUnitario(alimento.getValorUnitario());
                     record.setData(alimento.getData());

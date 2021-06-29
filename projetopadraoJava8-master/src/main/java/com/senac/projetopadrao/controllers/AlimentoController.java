@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 
 
-@RequestMapping("/alimentos")
+@RequestMapping("/index")
 public class AlimentoController {
 
     @RequestMapping("/index")
@@ -35,13 +35,13 @@ public class AlimentoController {
 
     @GetMapping("/")
         public ModelAndView listaAlimentos() {
-            ModelAndView mv = new ModelAndView("alimentos");
+            ModelAndView mv = new ModelAndView("index");
 
-            ArrayList<Alimento> alimentos = new ArrayList<>();
+            ArrayList<Alimento> index = new ArrayList<>();
 
-            alimentos = (ArrayList<Alimento>) alimentoRepository.findAll();
+        index = (ArrayList<Alimento>) alimentoRepository.findAll();
 
-            mv.addObject("alimentos", alimentos);
+            mv.addObject("index", index);
 
             return mv;
         }
@@ -55,13 +55,13 @@ public class AlimentoController {
         public String addAlimento (@Validated Alimento alimento){
         alimentoRepository.save(alimento);
 
-        return "redirect:/alimentos/";
+        return "redirect:/index/";
     }
 
     @RequestMapping("/addNew")
     public String addNew(Alimento alimento){
         alimentoRepository.save(alimento);
-        return "redirect:/alimentos/";
+        return "redirect:/index/";
 
     }
 
@@ -95,7 +95,7 @@ public class AlimentoController {
     @RequestMapping("/update")
     public String update(Alimento alimento){
         alimentoService.update(alimento);
-        return "redirect:/alimentos/";
+        return "redirect:/index/";
     }
 }
 

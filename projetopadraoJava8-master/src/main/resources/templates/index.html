@@ -45,6 +45,17 @@
             border-radius: 5px;
 
         }
+
+        .checkmark {
+            text-align: center;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+}
     </style>
 
 
@@ -110,6 +121,7 @@
                             <thead>
                             <tr>
                                 <td scope="col"></td>
+                                <td scope="col"></td>
                                 <!--                                <td scope="col">Id</td>-->
                                 <td scope="col">Nome</td>
                                 <td scope="col">Qtd.</td>
@@ -126,7 +138,11 @@
                             </thead>
 
                             <tbody>
+
                             <tr th:each="alimento : ${index}">
+                                <td>
+                                    <input class="checkmark" type="checkbox">
+                                </td>
                                 <!--                                 <th scope="row" th:text="${compra.id}"></th>-->
                                 <td class="text-info fw-bold">
                                     <a th:href="@{/index/getOne/(id=${alimento.id})}"
@@ -134,7 +150,6 @@
                                        data-bs-target="#editModal"> Detalhes
                                     </a>
                                 </td>
-
                                 <!--                                <td class="text-info fw-bold"> <a th:href="@{/alimento/${alimento.id}}" class="float btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal"> Detalhes </a></td>-->
                                 <!--                                <td th:text="${alimento.id}"></td>-->
                                 <td th:text="${alimento.nome}"></td>
@@ -210,10 +225,10 @@
                                     </div>
                                     <div class="modal-footer">
                                         <div class="container">
-                                            <button type="button" class="btn btn-warning text-light text-start"
+                                            <button type="button" class="btn btn-secondary text-light text-start"
                                                     data-bs-dismiss="modal">Fechar
                                             </button>
-                                            <button type="submit" class="btn btn-dark text-end">Salvar</button>
+                                            <button type="submit" class="btn btn-primary text-end">Salvar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -279,16 +294,18 @@
                                     </div>
                                     <div class="modal-footer">
                                         <div class="container">
-                                            <button type="button" class="btn-warning text-light text-start"
-                                                    data-bs-dismiss="modalEdit">Fechar
-                                            </button>
-                                            <button type="button" onclick="updateAlimento()" data-bs-dismiss="modal"
-                                                    class="btn-dark text-end">Salvar
-                                            </button>
-                                            <!--                                            <button type="button" data-bs-dismiss="modal" class="btn-danger text-end" onclick="deleteAlimento()"> Deletar </button>-->
-                                            <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                                    data-bs-dismiss="modal" class="btn-danger text-end"> Deletar
-                                            </button>
+                                            <div class="d-grid gap-2 d-md-block">
+                                                <button type="button" class="btn-secondary text-start"
+                                                        data-bs-dismiss="modalEdit">Fechar
+                                                </button>
+                                                <button type="button" onclick="updateAlimento()" data-bs-dismiss="modal"
+                                                        class="btn-primary text-end">Salvar
+                                                </button>
+                                                <!--                                            <button type="button" data-bs-dismiss="modal" class="btn-danger text-end" onclick="deleteAlimento()"> Deletar </button>-->
+                                                <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                                        data-bs-dismiss="modal" class="btn-danger text-end"> Deletar
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -309,10 +326,8 @@
                                             aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-
-
-                                    <h3 for="recipient-name" class="sp-10">Tem certeza que deseja deletar este item
-                                        ?</h3>
+                                    <h4 for="recipient-name" class="sp-10">Tem certeza que deseja deletar este item
+                                        ?</h4>
 
                                     <div class="sp-10">
                                         <button type="button" data-bs-dismiss="modal"

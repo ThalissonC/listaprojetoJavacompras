@@ -32,6 +32,7 @@ AlimentoRepository alimentoRepository;
                .orElse(ResponseEntity.notFound().build());
     }
 
+    // Edição
     @PutMapping(value="/alimento/{id}")
     public ResponseEntity update(@PathVariable("id") Long id,
                                  @RequestBody Alimento alimento) {
@@ -51,6 +52,7 @@ AlimentoRepository alimentoRepository;
                 }).orElse(ResponseEntity.notFound().build());
     }
 
+    // Delete
     @DeleteMapping(path ={"/alimento/{id}"})
     public ResponseEntity <?> delete(@PathVariable Long id) {
         return alimentoRepository.findById(id)

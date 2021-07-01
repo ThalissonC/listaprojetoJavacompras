@@ -19,13 +19,13 @@ import java.util.ArrayList;
 
 
 
-@RequestMapping("/index")
+
 public class AlimentoController {
 
-    @RequestMapping("/index")
-    public ModelAndView index(){
-        return new ModelAndView("index");
-    }
+//    @RequestMapping("/")
+//    public ModelAndView index(){
+//        return new ModelAndView("index");
+//    }
 
     @Autowired
     AlimentoRepository alimentoRepository;
@@ -33,7 +33,7 @@ public class AlimentoController {
 
 
 
-    @GetMapping("/")
+    @RequestMapping("/")
         public ModelAndView listaAlimentos() {
             ModelAndView mv = new ModelAndView("index");
 
@@ -61,7 +61,7 @@ public class AlimentoController {
     @RequestMapping("/addNew")
     public String addNew(Alimento alimento){
         alimentoRepository.save(alimento);
-        return "redirect:/index/";
+        return "redirect:/";
 
     }
 

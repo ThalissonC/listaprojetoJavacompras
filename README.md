@@ -29,7 +29,7 @@ Sistema operacional Windows 8 ou superior, e permissão de administrador.
 
 Abrir o projeto em uma IDE que suporte o Java, e executar o projeto padrão application e logo depois seguir os passos abaixo:
 
-1.  Abrir o navegar e digitar localhost:8080 e dar enter para acessar a página index controladora pelo homecontroller.
+1.  Abrir o navegar e digitar localhost:8080 e pressionar enter para acessar a página index controladora pelo HomeController.
     
 2.  Abrir uma página única com todos os itens de todas as categorias.
     
@@ -46,7 +46,7 @@ Abrir o projeto em uma IDE que suporte o Java, e executar o projeto padrão appl
 
 ## 📌 Versão
 
-Nós usamos [GitHub](https://github.com/) para controle de versão. Para as versões disponíveis. (https://github.com/suas/tags/do/projeto). 
+Nós usamos [GitHub](https://github.com/) para controle de versão. Para conferir o projeto disponível. (https://github.com/ThalissonC/listaprojetoJavacompras). 
 
 ## ✒️ Autores
 
@@ -58,5 +58,5 @@ Nós usamos [GitHub](https://github.com/) para controle de versão. Para as vers
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODcxNzc4MTA0LDg1MzM1NTEzNl19
+eyJoaXN0b3J5IjpbLTE4OTA0Mzg2MTQsODUzMzU1MTM2XX0=
 -->

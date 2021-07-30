@@ -50,15 +50,13 @@ Nós usamos [GitHub](https://github.com/) para controle de versão. Para as vers
 
 ## ✒️ Autores
 
-* **Um desenvolvedor** - *Thallison* - [umdesenvolvedor](https://github.com/linkParaPerfil)
+* **Um desenvolvedor** - *Thallison* - (https://github.com/ThalissonC)
 * **Weverton**  **Leonardo** **Felipe**- *Documentação* 
 
-## 📄 Licença
 
-Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODUzMzU1MTM2XX0=
+eyJoaXN0b3J5IjpbODcxNzc4MTA0LDg1MzM1NTEzNl19
 -->

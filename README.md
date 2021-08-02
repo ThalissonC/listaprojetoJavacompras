@@ -1,4 +1,4 @@
-# ListaCompraa
+# Lista Compras Java
 
 Projeto Integrador UC 16
 

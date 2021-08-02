@@ -53,8 +53,3 @@ Nós usamos [GitHub](https://github.com/) para controle de versão. Para conferi
 
 
 
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTA0Mzg2MTQsODUzMzU1MTM2XX0=
--->

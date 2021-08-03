@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="listacompras" target="1.8" />
       <module name="projetopadrao" target="1.8" />
       <module name="projetopadrao.main" target="1.8" />
       <module name="projetopadrao.test" target="1.8" />

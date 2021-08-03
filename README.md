@@ -47,7 +47,7 @@ Abrir o projeto em uma IDE que suporte o Java, e executar a classe ProjetoPadrã
 ## 🛠️ Construído com
 
 
-**HTML5, CSS3, JAVA, JAVASCRIPT, AJAX e SPRING BOOT**
+**HTML5, CSS3, JAVA, JAVASCRIPT, AJAX , GRADLE(Banco de dados) e SPRING BOOT**
 
 ## 📌 Versão
 

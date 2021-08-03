@@ -8,9 +8,9 @@ Consulte **Instalação** para saber como implantar o projeto.
 
 ### 📋 Pré-requisitos
 
-REQUISITOS DE HARDWARE:
+REQUISITOS MÍNIMOS DE HARDWARE:
 
-Processador dual-core 1.5 Ghz, 64 bits
+Processador Dual-core 1.5 Ghz, 64 bits
 
 Suporte para Java 8
 
@@ -20,20 +20,27 @@ Suporte para Java 8
 
 1GB de armazenamento livre
 
-Sistema operacional Windows 8 ou superior, e permissão de administrador.
+Sistema operacional Windows 7 ou superior, e permissão de administrador.
 
 ### 🔧 Instalação
 
 
-Abrir o projeto em uma IDE que suporte o Java, e executar o projeto padrão application e logo depois seguir os passos abaixo:
+Abrir o projeto em uma IDE que suporte o Java, e executar a classe ProjetoPadrãoApplication e logo depois seguir os passos abaixo:
 
-1.  Abrir o navegar e digitar localhost:8080 e pressionar enter para acessar a página index controladora pelo HomeController.
+1.  Abrir o navegar e digitar localhost:8080 na barra de pesquisa e pressionar enter para acessar a página inicial controlada pelo CompraController.
     
-2.  Abrir uma página única com todos os itens de todas as categorias.
-    
-3.  Na página terá um botão para adicionar os itens à lista.
-    
-1.  Os itens adicionados poderão conter: nome, categoria, quantidade, valor (não obrigatório) e data.
+2.  Abrirá uma página única com todos os itens de todas as categorias.
+   
+### ✅ Executando
+
+1. Após a execução do projeto e da exibição da tela inicial no seu navegador.
+
+2. Ná pagina tera um botão para adição de itens a lista de compras
+
+3. Ao clicar no botão deverão ser inseridas informações como: Nome, Quantidade, Valor(Não obrigatório) e Data.
+
+4. Ao clicar no nome do item será exibido um modal detalhando todas as suas informações e também será possível editalas, no final do modal ira ter um botão para deletar o item, que caso seja pressionado irá pedir a confirmação para que ele seja deletado do banco de dados.
+ 
 ```
 
 

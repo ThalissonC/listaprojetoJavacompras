@@ -40,7 +40,7 @@ Abrir o projeto em uma IDE que suporte o Java, e executar o projeto padrão appl
 ## 🛠️ Construído com
 
 
-**CSS, HTML, JAVA e SPRING BOOT**
+**HTML5, CSS3, JAVA, JAVASCRIPT, AJAX e SPRING BOOT**
 
 ## 📌 Versão
 

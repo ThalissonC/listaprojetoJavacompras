@@ -8,6 +8,10 @@ Consulte **Instalação** para saber como implantar o projeto.
 
 ### 📋 Pré-requisitos
 
+Acesso a Internet
+
+Navegador de Internet
+
 REQUISITOS MÍNIMOS DE HARDWARE:
 
 Processador Dual-core 1.5 Ghz, 64 bits

@@ -2,11 +2,11 @@
 
 Projeto Integrador UC 16
 
-## 🚀 Começando
+# 🚀 Começando
 
 Consulte **Instalação** para saber como implantar o projeto.
 
-### 📋 Pré-requisitos
+## 📋 Pré-requisitos
 
 Acesso a Internet
 

@@ -6,14 +6,6 @@
            text-align: right;
         }
 
-        .sp-10{
-            padding-bottom:10px;
-        }
-
-        .sp-20{
-            padding-bottom:20px;
-        }
-
         .bp {
             margin:20px;
             padding:4px;
@@ -43,3 +35,16 @@
             border: 1px solid white;
 
                 }
+
+      .sp-10{
+            padding-bottom:10px;
+            }
+
+      .sp-20{
+            padding-bottom:20px;
+            }
+
+      .sp-u-10 {
+            p
+      }
+

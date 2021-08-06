@@ -28,6 +28,7 @@ public class Alimento implements Serializable {
     private String parcelas;
     //private double valorTotal = quantidade * valorUnitario;
     private String data;
+    private String dataArquivada;
     //private String somaTotal;
 
 
@@ -103,5 +104,15 @@ public class Alimento implements Serializable {
 
     public void setData(String data) {
         this.data = data;
+//        this.dataArquivada = data;
+    }
+
+    public String getDataArquivada() {
+        return dataArquivada;
+    }
+
+    public void setDataArquivada(String dataArquivada) {
+        this.dataArquivada = dataArquivada;
+        this.data = dataArquivada;
     }
 }

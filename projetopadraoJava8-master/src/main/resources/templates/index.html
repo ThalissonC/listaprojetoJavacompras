@@ -78,7 +78,7 @@
                                 <td scope="col"></td>
                                 <td scope="col">Nome</td>
                                 <td scope="col">Qtd.</td>
-                                <td scope="col">Data</td>
+                                <td style="visibility: hidden;" scope="col">Data</td>
 
 
                                 </td>
@@ -98,8 +98,15 @@
                                 </td>
                                 <td th:text="${alimento.quantidade}"></td>
 
-                                <td th:text="${alimento.data}"></td>
+                                <td class="text-center">
+                                    <p style="visibility: hidden;" th:text="${alimento.dataArquivada}">
+                                        <p class="text-center"> 💡 </p>
+                                    </p>
 
+
+
+                                </td>
+<!--                                style="visibility: hidden;"-->
                             </tr>
                             </tbody>
                         </table>
@@ -121,8 +128,6 @@
                                                 aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-
-
 
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Nome:</label>
@@ -162,7 +167,7 @@
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Data:</label>
                                             <input type="text" placeholder="ex: 05-06-21"
-                                                   class="form-control text-center" id="recipient-name" name="data">
+                                                   class="form-control text-center" id="recipient-name" name="dataArquivada">
                                         </div>
 
                                     </div>

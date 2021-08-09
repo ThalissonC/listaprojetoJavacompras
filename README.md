@@ -1,32 +1,21 @@
 # Lista Compras
 
+
 Projeto Integrador UC 16
 
-## 🚀 Começando
+# 🚀 Começando
 
 Consulte **Instalação** para saber como implantar o projeto.
 
-### 📋 Pré-requisitos
+## 📋 Pré-requisitos
 
-Acesso a Internet
+(adicionar aqui o link da aplicação)
 
-Navegador de Internet
+Faça o download do **Java SE Development Kit 8u301** (Windows x64, 169.46 MB), com o link abaixo.
 
-REQUISITOS MÍNIMOS DE HARDWARE:
+https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html
 
-Processador Dual-core 1.5 Ghz, 64 bits
-
-Suporte para Java 8
-
-256MB de memória de vídeo
-
-2GB de memória ram
-
-1GB de armazenamento livre
-
-Sistema operacional Windows 7 ou superior, e permissão de administrador.
-
-### 🔧 Instalação
+### 🔧 Instalação configuração
 
 
 Abrir o projeto em uma IDE que suporte o Java, e executar a classe ProjetoPadrãoApplication e logo depois seguir os passos abaixo:
@@ -37,13 +26,13 @@ Abrir o projeto em uma IDE que suporte o Java, e executar a classe ProjetoPadrã
    
 ### ✅ Executando
 
-1. Após a execução do projeto e da exibição da tela inicial no seu navegador.
+1. Após a exibição da tela inicial no seu navegador, terá um botão para adicionar itens a lista de compras.
 
-2. Ná pagina tera um botão para adição de itens a lista de compras
 
-3. Ao clicar no botão deverão ser inseridas informações como: Nome, Quantidade, Valor(Não obrigatório) e Data.
 
-4. Ao clicar no nome do item será exibido um modal detalhando todas as suas informações e também será possível editalas, no final do modal ira ter um botão para deletar o item, que caso seja pressionado irá pedir a confirmação para que ele seja deletado do banco de dados.
+2. Ao clicar no botão deverão ser inseridas informações como: Nome, Quantidade, Valor(Não obrigatório) e Data.
+
+3. Ao clicar no nome do item será utilizado um modal detalhando com todas as suas informações e também será possível editá-las e no final do modal terá um botão para deletar o item, que caso seja pressionado irá pedir a confirmação para que ele seja deletado do banco de dados.
  
 ```
 
@@ -61,6 +50,7 @@ Nós usamos [GitHub](https://github.com/) para controle de versão. Para conferi
 
 * **Um desenvolvedor** - *Thallison* - (https://github.com/ThalissonC)
 * **Weverton**  **Leonardo** **Felipe**- *Documentação* 
+
 
 
 

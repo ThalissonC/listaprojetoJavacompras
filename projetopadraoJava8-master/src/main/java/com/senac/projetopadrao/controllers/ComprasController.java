@@ -16,10 +16,6 @@ import org.yaml.snakeyaml.events.AliasEvent;
 import java.util.ArrayList;
 
 @Controller
-
-
-
-
 public class ComprasController {
 
 //    @RequestMapping("/")

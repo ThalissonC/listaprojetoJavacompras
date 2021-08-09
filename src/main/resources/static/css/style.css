@@ -1,0 +1,64 @@
+       .top-icon-left{
+           text-align: left;
+        }
+
+        .top-icon-right{
+           text-align: right;
+        }
+
+        .bp {
+            margin:20px;
+            padding:4px;
+        }
+
+        .add-button {
+            border-radius: 5px;
+
+        }
+
+        .checkmark {
+            text-align: center;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+}
+
+        a:link {
+             text-decoration:none;
+               }
+
+        .bord {
+            border: 1px solid white;
+
+                }
+
+      .sp-10{
+            padding-bottom:10px;
+            }
+
+      .sp-20{
+            padding-bottom:20px;
+            }
+
+       .sp-up-10 {
+            padding-top:10px;
+            top: 10px;;
+             }
+
+      .sp-up-20 {
+            padding-bottom:40px;
+
+      }
+
+      .sp-up-30 {
+           padding-top:30px;
+                }
+
+      .sp-up-40 {
+          padding-top:40px;
+            }
+

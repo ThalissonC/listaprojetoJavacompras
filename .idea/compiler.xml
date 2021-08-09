@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
-      <module name="projetopadrao" target="1.8" />
-      <module name="projetopadrao.main" target="1.8" />
-      <module name="projetopadrao.test" target="1.8" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="listacompras" target="1.8" />
+      <module name="listacompras.main" target="1.8" />
+      <module name="listacompras.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

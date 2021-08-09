@@ -44,7 +44,21 @@
             padding-bottom:20px;
             }
 
-      .sp-u-10 {
-            p
+       .sp-up-10 {
+            padding-top:10px;
+            top: 10px;;
+             }
+
+      .sp-up-20 {
+            padding-bottom:40px;
+
       }
+
+      .sp-up-30 {
+           padding-top:30px;
+                }
+
+      .sp-up-40 {
+          padding-top:40px;
+            }
 

@@ -25,6 +25,13 @@ AlimentoRepository alimentoRepository;
         return (ArrayList<Alimento>) alimentoRepository.findAll();
     }
 
+    // Adiciona Dados
+    @PostMapping("/add")
+    public Alimento create(@RequestBody Alimento alimento){
+        return alimentoRepository.save(alimento);
+    }
+
+    // Recebe Dados
     @GetMapping(path = {"/alimento/{id}"})
     public ResponseEntity findById(@PathVariable Long id){
        return alimentoRepository.findById(id)
@@ -45,6 +52,21 @@ AlimentoRepository alimentoRepository;
                     record.setValorUnitario(alimento.getValorUnitario());
                     record.setData(alimento.getData());
 
+
+                    Alimento updated  = alimentoRepository.save(record);
+
+                    return ResponseEntity.ok().body(updated);
+                }).orElse(ResponseEntity.notFound().build());
+    }
+
+    // Edição AlimentoComprado
+    @PutMapping(value="/alimentoComprado/{id}")
+    public ResponseEntity updateAlimentoComprado(@PathVariable("id") Long id,
+                                 @RequestBody Alimento alimento) {
+        return alimentoRepository.findById(id)
+                .map(record -> {
+                    record.setId(alimento.getId());
+                    record.setComprado(alimento.getComprado());
 
                     Alimento updated  = alimentoRepository.save(record);
 

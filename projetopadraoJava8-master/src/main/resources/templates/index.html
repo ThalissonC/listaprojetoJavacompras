@@ -89,7 +89,7 @@
 
                             <tr th:each="alimento : ${index}">
                                 <td>
-                                    <input class="checkmark" type="checkbox">
+                                    <input name="checks" class="checkmark" type="checkbox">
                                 </td>
 
                                 <td>
@@ -98,14 +98,15 @@
                                 </td>
                                 <td th:text="${alimento.quantidade}"></td>
 
-                                <td class="text-center">
-                                    <p style="visibility: hidden;" th:text="${alimento.dataArquivada}">
-                                        <p class="text-center"> 💡 </p>
+                                <td>
+                                    <p th:if="${alimento.comprado == 'sim'}" class="sp-20" th:text="${alimento.dataArquivada}">
+
                                     </p>
 
 
 
                                 </td>
+<!--                                <h1 th:if="${alimento.nome == ''}">Certo</h1>-->
 <!--                                style="visibility: hidden;"-->
                             </tr>
                             </tbody>
@@ -147,7 +148,7 @@
                                                 <option value="Higiene">Higiene</option>
                                                 <option value="Horifruti">Hortifruti</option>
                                                 <option value="Limpeza">Limpeza</option>
-                                                <option value="Mercenaria">Mercenaria</option>
+                                                <option value="Mercenaria">Mercearia</option>
 
                                             </select>
                                         </div>
@@ -168,6 +169,12 @@
                                             <label for="recipient-name" class="col-form-label">Data:</label>
                                             <input type="text" placeholder="ex: 05-06-21"
                                                    class="form-control text-center" id="recipient-name" name="dataArquivada">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Comprado</label>
+                                            <input type="text" placeholder="sim ou não"
+                                                   class="form-control text-center" id="recipient-name" name="comprado">
                                         </div>
 
                                     </div>
@@ -223,7 +230,7 @@
                                                 <option value="Higiene">Higiene</option>
                                                 <option value="Horifruti">Hortifruti</option>
                                                 <option value="Limpeza">Limpeza</option>
-                                                <option value="Mercenaria">Mercenaria</option>
+                                                <option value="Mercenaria">Mercearia</option>
                                             </select>
 
                                         </div>
@@ -243,6 +250,12 @@
                                         <div class="form-group">
                                             <label for="recipient-name" class="col-form-label">Data</label>
                                             <input type="text" class="form-control" id="dataEdit" name="dataEdit">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Comprado</label>
+                                            <input type="text" placeholder="sim ou não"
+                                                   class="form-control text-center" id="compradoEdit" name="compradoEdit">
                                         </div>
 
                                     </div>
@@ -296,6 +309,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="text-center d-grid gap-2 d-md-block">
+                        <button type="button" class="btn btn-primary" onclick="exibir()">Salvar</button>
+<!--                        <button type="button" onclick="updateAlimentoComprado()" data-bs-dismiss="modal"-->
+<!--                                class="btn btn-primary text-end">Salvar Alimento-->
+<!--                        </button>-->
+                    </div>
                 </div>
 
                 <!-- TOTAL -->
@@ -312,6 +331,8 @@
     <div class="col-sm">
 
     </div>
+
+
 </div>
 
 

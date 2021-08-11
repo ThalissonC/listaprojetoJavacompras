@@ -19,7 +19,7 @@ https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html
 ### 🔧 Instalação e configuração
 
  1. Abrir o projeto em uma IDE que suporte o Java.
- 2. 
+ 2. Vefiricar na aba file daa IDE se as configurações estão semelhantes das que estão apresentadas abaixo
 ![](https://lh5.googleusercontent.com/A2hnb_W530gfd3seu7PyfRWUSHt1G9xgovqDJx6CDbWWPu7VQzNlCnbajvQ6vYR_7ARXx6sq1A-FhGxO2TVliwF23wg9cPnCGES1nhJ1L6D_xTWm-2hRjDjGikFbhA)
 
 

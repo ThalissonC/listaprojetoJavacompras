@@ -12,23 +12,20 @@ Consulte **Instalação e configuração** para saber como implantar o projeto.
 
 Link da Aplicação
 https://projetolistacompras.herokuapp.com
-
-Faça o download do **Java SE Development Kit 8u301** (Windows x64, 169.46 MB), com o link abaixo.
-https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html
+-Java 8
+Você pode fazer o download do Java neste link > **Java SE Development Kit 8u301** (Windows x64, 169.46 MB). https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html
 
 ### 🔧 Instalação e configuração
 
  1. Abrir o projeto em uma IDE que suporte o Java.
- 2. Verificar na aba file da IDE se as configurações estão semelhantes das que são apresentadas abaixo
+ 2. Verificar na aba file > Project Structure, se as configurações estão semelhantes das que são apresentadas abaixo.
 ![](https://lh5.googleusercontent.com/A2hnb_W530gfd3seu7PyfRWUSHt1G9xgovqDJx6CDbWWPu7VQzNlCnbajvQ6vYR_7ARXx6sq1A-FhGxO2TVliwF23wg9cPnCGES1nhJ1L6D_xTWm-2hRjDjGikFbhA)
 
+![](https://lh6.googleusercontent.com/RtydX36M1B-qVB_OC90cLshLvh8La9yIrb98XfRTKUEPyH9r_0_-eqO_mmAm7FnTKex1kelsD-1GLnilWQvXDFcmu3C5CXiRG5WUVDIXM-xGUV9rK7kMK5R0dIVAMQ)
 
-
-e executar a classe ProjetoPadrãoApplication e logo depois seguir os passos abaixo:
-
-
-   
+  
 ### ✅ Utilização
+
 
 Abaixo na imagem 1.1, tela principal, contém alguns itens que foram adicionados à lista.
 

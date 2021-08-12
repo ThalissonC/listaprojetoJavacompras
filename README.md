@@ -2,10 +2,6 @@
 
 Projeto Integrador UC 16
 
-# 🚀 Começando
-
-Consulte **Instalação e configuração** para saber como implantar o projeto.
-
 ## 📋 Pré-requisitos
 
 -Java 8

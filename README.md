@@ -8,9 +8,6 @@ Consulte **Instalação e configuração** para saber como implantar o projeto.
 
 ## 📋 Pré-requisitos
 
-Link da Aplicação
-https://projetolistacompras.herokuapp.com
-
 -Java 8
 
 Você pode fazer o download do Java no link abaixo > **Java SE Development Kit 8u301** (Windows x64, 169.46 MB). https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html
@@ -28,6 +25,8 @@ Você pode fazer o download do Java no link abaixo > **Java SE Development Kit 8
   
 ### ✅ Utilização
 
+Link da Aplicação
+https://projetolistacompras.herokuapp.com
 
 Abaixo na imagem 1.1, tela principal, contém alguns itens que foram adicionados à lista.
 

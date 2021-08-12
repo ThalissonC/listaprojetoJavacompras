@@ -1,5 +1,3 @@
-
-
 # Lista Compras
 
 Projeto Integrador UC 16
@@ -15,7 +13,7 @@ https://projetolistacompras.herokuapp.com
 
 -Java 8
 
-Você pode fazer o download do Java neste link > **Java SE Development Kit 8u301** (Windows x64, 169.46 MB). https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html
+Você pode fazer o download do Java no link abaixo > **Java SE Development Kit 8u301** (Windows x64, 169.46 MB). https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html
 
 ### 🔧 Instalação e configuração
 
@@ -68,5 +66,4 @@ Nós usamos [GitHub](https://github.com/) para controle de versão. Para conferi
 
 * **Um desenvolvedor** - ****Thallison**** - (https://github.com/ThalissonC)
 * **Leonardo**, **Weverton**  **e** **Felipe**- *Documentação* 
-
 

@@ -12,7 +12,9 @@ Consulte **Instalação e configuração** para saber como implantar o projeto.
 
 Link da Aplicação
 https://projetolistacompras.herokuapp.com
+
 -Java 8
+
 Você pode fazer o download do Java neste link > **Java SE Development Kit 8u301** (Windows x64, 169.46 MB). https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html
 
 ### 🔧 Instalação e configuração

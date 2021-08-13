@@ -33,12 +33,12 @@ Abaixo na imagem 1.1, tela principal, contém alguns itens que foram adicionados
 Imagem 1.1 
 ![](https://lh3.googleusercontent.com/vnWYXTPkYealpa774x6-aZRSIbCIyjJMm94cKhPrZy6j7zUvlzhoFlTzglVYjyv5q2zTCeOsOZmUlDvaYTZC6Yyzh0-PTBwqSv67WFLryaOqzyOHO3M2RjrHKH3I1QBa1BCQJIE)
 
-Clicando no botão de mais(canto superior direito da tela principal) podemos adicionar e salvar um item a lista.
+Adicionando item a lista.
 
 Imagem 1.2 - modal(Pop-up)
 ![enter image description here](https://github.com/leonardo202/projetopadrao/blob/master/a68e2b88-0ad2-4178-bda0-8f20ca16b50a.jfif?raw=true)
 
-É possível selecionar a caixa de marcação(checkbox), para mostrar que o item foi adquirido(comprado).
+Selecionando caixa de marcação(checkbox), para mostrar que o item foi adquirido(comprado).
 
 Imagem 1.3
 ![enter image description here](https://github.com/leonardo202/projetopadrao/blob/master/9ee3f132-6125-430c-a517-d921077f491a.jfif?raw=true)

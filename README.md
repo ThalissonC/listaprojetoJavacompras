@@ -14,9 +14,13 @@ Você pode fazer o download do Java no link abaixo > **Java SE Development Kit 8
  2. Verificar na aba file > Project Structure, se as configurações estão semelhantes das que são apresentadas abaixo.
 
 
-![](https://lh5.googleusercontent.com/A2hnb_W530gfd3seu7PyfRWUSHt1G9xgovqDJx6CDbWWPu7VQzNlCnbajvQ6vYR_7ARXx6sq1A-FhGxO2TVliwF23wg9cPnCGES1nhJ1L6D_xTWm-2hRjDjGikFbhA)
+![](https://lh5.googleusercontent.com/A2hnb_W530gfd3seu7PyfRWUSHt1G9xgovqDJx6CDbWWPu7VQzNlCnbajvQ6vYR_7ARXx6sq1A-FhGxO2TVliwF23wg9cPnCGES1nhJ1L6D_xTWm-2hRjDjGikFbhA) 
 
 ![](https://lh6.googleusercontent.com/RtydX36M1B-qVB_OC90cLshLvh8La9yIrb98XfRTKUEPyH9r_0_-eqO_mmAm7FnTKex1kelsD-1GLnilWQvXDFcmu3C5CXiRG5WUVDIXM-xGUV9rK7kMK5R0dIVAMQ)
+
+Mude a versão do Java em Buil, Execution, Deployment > Build Tools > Gradle > Gradle JVM.
+
+![image](https://user-images.githubusercontent.com/65375073/129286240-6855edc4-b3ce-4464-a4c8-6e5f37c20c14.png)
 
   
 ### ✅ Utilização

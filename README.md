@@ -28,7 +28,7 @@ Mude a versão do Java em Buil, Execution, Deployment > Build Tools > Gradle > G
 Link da Aplicação
 https://projetolistacompras.herokuapp.com
 
-Abaixo na imagem 1.1, tela principal, contém alguns itens que foram adicionados à lista.
+Tela principal com alguns itens que foram adicionados à lista.
 
 Imagem 1.1 
 ![](https://lh3.googleusercontent.com/vnWYXTPkYealpa774x6-aZRSIbCIyjJMm94cKhPrZy6j7zUvlzhoFlTzglVYjyv5q2zTCeOsOZmUlDvaYTZC6Yyzh0-PTBwqSv67WFLryaOqzyOHO3M2RjrHKH3I1QBa1BCQJIE)

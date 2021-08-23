@@ -4,7 +4,7 @@ Projeto Integrador UC 16
 
 ## 📋 Pré-requisitos
 
--Java 8
+- Java 8
 
 Você pode fazer o download do Java no link abaixo > **Java SE Development Kit 8u301** (Windows x64, 169.46 MB). https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html
 
@@ -38,7 +38,7 @@ Adicionando item a lista.
 Imagem 1.2 - modal(Pop-up)
 ![enter image description here](https://github.com/leonardo202/projetopadrao/blob/master/a68e2b88-0ad2-4178-bda0-8f20ca16b50a.jfif?raw=true)
 
-Selecionando caixa de marcação(checkbox), para mostrar que o item foi adquirido(comprado).
+Selecionando caixa de marcação(checkbox), para mostrar que o item foi comprado.
 
 Imagem 1.3
 ![enter image description here](https://github.com/leonardo202/projetopadrao/blob/master/9ee3f132-6125-430c-a517-d921077f491a.jfif?raw=true)

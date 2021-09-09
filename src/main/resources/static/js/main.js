@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded" , function(event) {
            $("#nomeEdit").val(r.nome);
            $("#categoriaEdit").val(r.categoria);
            $("#quantidadeEdit").val(r.quantidade);
-           $("#valorUnitarioEdit").val(r.valorUnitario);
+           $("#valorUnitarioEdit").val("R$" + r.valorUnitario);
            $("#dataEdit").val(r.data);
 
 

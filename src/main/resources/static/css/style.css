@@ -3,7 +3,10 @@
           background-image: url("mercado2.jpeg");
 
         }
-
+            
+      hr {
+          border: 1px solid red;
+        }
 
 
        .top-icon-left{

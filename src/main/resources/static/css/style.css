@@ -1,3 +1,11 @@
+
+      body {
+          background-image: url("mercado2.jpeg");
+
+        }
+
+
+
        .top-icon-left{
            text-align: left;
         }
@@ -10,6 +18,13 @@
             margin:20px;
             padding:4px;
         }
+
+        .colorPurple {
+           color: #7828FD;
+        }
+
+        table {background:white;}
+        td {border:none}
 
         .add-button {
             border-radius: 5px;
@@ -36,29 +51,65 @@
 
                 }
 
-      .sp-10{
-            padding-bottom:10px;
-            }
+      .hidden {
+        visibility: hidden;
+      }
 
-      .sp-20{
-            padding-bottom:20px;
-            }
+       *{padding:0;margin:0;}
 
-       .sp-up-10 {
-            padding-top:10px;
-            top: 10px;;
-             }
+       /*
+       body{
+       	font-family:Verdana, Geneva, sans-serif;
+       	font-size:18px;
+       	background-color:#CCC;
+       }
+       */
 
-      .sp-up-20 {
-            padding-bottom:40px;
+       .floatButton{
+
+        width:40px;
+        height:40px;
+        bottom:20px;
+        right:40px;
+       	background-color:#0C9;
+       	color:#FFF;
+       	border-radius:50px;
+       	text-align:center;
+       	box-shadow: 2px 2px 3px #999;
+       }
+
+       .my-float{
+       	margin-top:10px;
+       }
+
+
+    /*
+        -- Input Texts
+    */
+       .inputText-s {
+            height: 30px;
+            width: 50px;
+
+       }
+
+       .inputText-m {
+           height: 30px;
+           width: 65px;
 
       }
 
-      .sp-up-30 {
-           padding-top:30px;
-                }
+      /*
+        -- Button Delete e Edit
+      */
 
-      .sp-up-40 {
-          padding-top:40px;
+      .bt-small-m {
+                 height: 25px;
+                 width: 25px;
+                 padding-right: 5px
             }
+
+
+
+
+
 

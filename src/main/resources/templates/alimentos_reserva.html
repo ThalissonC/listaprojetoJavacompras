@@ -126,10 +126,10 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="alimento : ${alimentos}">
+                            <tr th:each="compra : ${alimentos}">
                                 <!--                                 <th scope="row" th:text="${compra.id}"></th>-->
                                 <td class="text-info fw-bold">
-                                    <a th:href="@{/alimentos/getOne/(id=${alimento.id})}"
+                                    <a th:href="@{/alimentos/getOne/(id=${compra.id})}"
                                                                  class="float btn btn-warning" data-bs-toggle="modal"
                                                                  data-bs-target="#editModal"> Detalhes
                                     </a>
@@ -138,16 +138,16 @@
 
 
 
-                                <!--                                <td class="text-info fw-bold"> <a th:href="@{/alimento/${alimento.id}}" class="float btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal"> Detalhes </a></td>-->
-<!--                                <td th:text="${alimento.id}"></td>-->
-                                <td th:text="${alimento.nome}"></td>
-                                <td th:text="${alimento.quantidade}"></td>
+                                <!--                                <td class="text-info fw-bold"> <a th:href="@{/compra/${compra.id}}" class="float btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal"> Detalhes </a></td>-->
+<!--                                <td th:text="${compra.id}"></td>-->
+                                <td th:text="${compra.nome}"></td>
+                                <td th:text="${compra.quantidade}"></td>
                                 <!--                                 <td th:text="${compra.categoria}"></td>-->
                                 <!--                                 <td th:text="${compra.valorUnitario}"></td>-->
                                 <!--                                 <td th:text="${compra.formaDePagamento}"></td>-->
                                 <!--                                 <td th:text="${compra.valorTotal}"></td>-->
                                 <!--                                 <td th:text="${compra.parcelas}"></td>-->
-                                <td th:text="${alimento.data}"></td>
+                                <td th:text="${compra.data}"></td>
 
 
                             </tr>
@@ -167,7 +167,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Adicionar alimento</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Adicionar compra</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                     </div>
@@ -241,7 +241,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="editModalLabel">Editar alimento</h5>
+                                        <h5 class="modal-title" id="editModalLabel">Editar compra</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                     </div>

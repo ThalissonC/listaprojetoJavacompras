@@ -25,8 +25,19 @@
 //    }
 //}
 
+alert
+
+// Definir data atual da adição do item a lista
+var data = new Date();
+var dia = data.getDate();  // 1-31
+var mes = data.getMonth(); // 0-11 (zero=janeiro)
+var ano4 = data.getFullYear(); // 4 dígitos
+
+var str_data = dia + '/' + (mes+1) + '/' + ano4;
+
 
 // Ação que preenche o MODAL de Edição com as informações do item clicado
+
 document.addEventListener("DOMContentLoaded" , function(event) {
 
     $('.table .btn').on('click', function(event){
@@ -44,13 +55,54 @@ document.addEventListener("DOMContentLoaded" , function(event) {
            $("#quantidadeEdit").val(r.quantidade);
            $("#valorUnitarioEdit").val(r.valorUnitario);
            $("#dataEdit").val(r.data);
-           $("#compradoEdit").val(r.comprado);
+
+
+           var formatarValorEmReal = document.getElementById("valorUnitarioEdit").toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
         });
 
         }
     )
  });
+
+document.addEventListener("DOMContentLoaded" , function(event) {
+
+    $('.table .fw-bold').on('click', function(event){
+        event.preventDefault();
+
+        var id = $(this).attr('href').split('?')[1].split('=')[1];
+
+        const resp = $.getJSON(`/api/alimentos/comprados/alimento/${id}`);
+        resp.then( r => {
+           console.log( r );
+
+           $("#idEdit").val(r.id);
+           $("#nomeEdit").val(r.nomeItemComprado);
+           $("#categoriaEdit").val(r.categoria);
+           $("#quantidadeEdit").val(r.quantidadeItemComprado);
+           $("#valorUnitarioEdit").val(r.valorUnitarioItemComprado);
+           $("#dataEdit").val(r.dataItemComprado);
+
+
+           var formatarValorEmReal = document.getElementById("valorUnitarioEdit").toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+        });
+
+        }
+    )
+ });
+
+
+
+//Tornar botão de salvar confirmação de compra visível
+var botaoVisivel = document.getElementsByName("checks");
+for(var i = 0; i < botaoVisivel.length; i++){
+      if(botaoVisivel[i].checked){
+        alert("executado")
+        var marcarCompra = documento.getElementById("btMarcarCompra");
+        marcarCompra.classList.remove('hidden');
+      }
+}
 
 // Ação através da marcação das CheckBox
 //
@@ -97,6 +149,103 @@ function exibir(){
     window.alert(texto);
   }
 
+function adicionarAlimento (event){
+
+    const id = $("#inputId").val();
+    const nome = $("#inputNome").val();
+    var quantidade = $("#inputQtd").val();
+    const valor = $("#inputValorUnitario").val();
+    const data = str_data;
+
+    if(quantidade == 0){
+        console.log("Foi")
+        quantidade = 1
+
+       const dados = {"id":id, "nome":nome, "quantidade":quantidade, "valorUnitario":valor, "data":data}
+       const dadosItensComprados = {"id":id, "nomeItemComprado":nome, "quantidadeItemComprado":quantidade, "valorUnitarioItemComprado":valor, "dataItemComprado":data}
+
+           console.log(dados);
+
+           const apiUrl = `/api/alimentos/add`;
+           const apiUrlComprado = `/api/alimentos/comprados/add`;
+
+           $.ajax({
+               contentType: "application/json; charset=uft-8",
+               url: apiUrl,
+               type: "POST",
+               dataType: "json",
+               data: JSON.stringify(dados),
+               contentType: "application/json",
+               success: function(resp) {
+                   console.log(resp);
+                   window.location.reload();
+               },
+               error: function(error) {
+                   console.log(error);
+               }
+           })
+
+           $.ajax({
+              contentType: "application/json; charset=uft-8",
+              url: apiUrlComprado,
+              type: "POST",
+              dataType: "json",
+              data: JSON.stringify(dadosItensComprados),
+              contentType: "application/json",
+              success: function(resp) {
+                  console.log(resp);
+                  window.location.reload();
+              },
+              error: function(error) {
+                  console.log(error);
+              }
+          })
+
+    } else{
+
+        console.log("Não é")
+        const dados = {"id":id, "nome":nome, "quantidade":quantidade, "valorUnitario":valor, "data":data}
+        const dadosItensComprados = {"id":id, "nomeItemComprado":nome, "quantidadeItemComprado":quantidade, "valorUnitarioItemComprado":valor, "dataItemComprado":data}
+
+            console.log(dados);
+
+            const apiUrl = `/api/alimentos/add`;
+            const apiUrlComprado = `/api/alimentos/comprados/add`;
+
+            $.ajax({
+                contentType: "application/json; charset=uft-8",
+                url: apiUrl,
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(dados),
+                contentType: "application/json",
+                success: function(resp) {
+                    console.log(resp);
+                    window.location.reload();
+                },
+                error: function(error) {
+                    console.log(error);
+                    alert('Só é possível usar o  .  para adicionar valor, ex: 5.50')
+                }
+            })
+
+            $.ajax({
+              contentType: "application/json; charset=uft-8",
+              url: apiUrlComprado,
+              type: "POST",
+              dataType: "json",
+              data: JSON.stringify(dadosItensComprados),
+              contentType: "application/json",
+              success: function(resp) {
+                  console.log(resp);
+                  window.location.reload();
+              },
+              error: function(error) {
+                  console.log(error);
+              }
+            })
+    }
+ }
 
 
  function updateAlimento (event){
@@ -132,67 +281,130 @@ function exibir(){
     })
  }
 
- function deleteAlimento (event){
+ function deleteAlimento(){
 
-     const id = $("#idEdit").val();
-     const nome = $("#nomeEdit").val();
-     const quantidade = $("#quantidadeEdit").val();
-     const data = $("#dataEdit").val();
+//      const id = $("#idEdit").val();
+//      const nome = $("#nomeEdit").val();
+//      const quantidade = $("#quantidadeEdit").val();
+//      const data = $("#dataEdit").val();
 
-     const dados = {"id":id, "nome":nome, "quantidade":quantidade, "data":data}
+      const dados = {"id":id}
 
-     console.log(dados);
-
-
-     const apiUrl = `/api/alimentos/alimento/${id}`;
-
-     $.ajax({
-         contentType: "application/json; charset=uft-8",
-         url: apiUrl,
-         type: "DELETE",
-         dataType: "json",
-         data: JSON.stringify(dados),
-         contentType: "application/json",
-         success: function(resp) {
-             console.log(resp);
-             window.location.reload();
-         },
-         error: function(error) {
-             console.log(error);
-             window.location.reload();
-         }
-     })
-  }
+      console.log(dados);
 
 
-function updateAlimentoComprado (event){
+      const apiUrl = `/api/alimentos/deletarAlimento/${id}`;
 
-    const id = $("#idEdit").val();
-    const comprado = $("#compradoEdit").val();
+      $.ajax({
+          contentType: "application/json; charset=uft-8",
+          url: apiUrl,
+          type: "DELETE",
+          dataType: "json",
+          data: JSON.stringify(dados),
+          contentType: "application/json",
+          success: function(resp) {
+              console.log(resp);
+              window.location.reload();
+          },
+          error: function(error) {
+              console.log(error);
+              window.location.reload();
+          }
+      })
+   }
 
-    const dados = {"id":id, "comprado":comprado}
 
-    console.log(dados);
+//function updateAlimentoComprado (event){
+//
+//    const id = $("#idEdit").val();
+//    const comprado = $("#compradoEdit").val();
+//
+//    const dados = {"id":id, "comprado":comprado}
+//
+//    console.log(dados);
+//
+//
+//    const apiUrl = `/api/alimentos/alimentoComprado/${id}`;
+//
+//    $.ajax({
+//        contentType: "application/json; charset=uft-8",
+//        url: apiUrl,
+//        type: "PUT",
+//        dataType: "json",
+//        data: JSON.stringify(dados),
+//        contentType: "application/json",
+//        success: function(resp) {
+//            console.log(resp);
+//            window.location.reload();
+//        },
+//        error: function(error) {
+//            console.log(error);
+//        }
+//    })
+// }
 
-
-    const apiUrl = `/api/alimentos/alimentoComprado/${id}`;
-
-    $.ajax({
-        contentType: "application/json; charset=uft-8",
-        url: apiUrl,
-        type: "PUT",
-        dataType: "json",
-        data: JSON.stringify(dados),
-        contentType: "application/json",
-        success: function(resp) {
-            console.log(resp);
-            window.location.reload();
-        },
-        error: function(error) {
-            console.log(error);
-        }
-    })
- }
+// function confirmarLista (event){
+//
+//     const id = $("#inputId").val();
+//     const nome = $("#inputNome").val();
+//     var quantidade = $("#inputQtd").val();
+//     const valor = $("#inputValorUnitario").val();
+//     const data = str_data;
+//
+//     if(quantidade == 0){
+//         console.log("Foi")
+//         quantidade = 1
+//
+//        const dados = {"id":id, "nome":nome, "quantidade":quantidade, "valorUnitario":valor, "data":data}
+//
+//            console.log(dados);
+//
+//            const apiUrl = `/api/alimentos/add`;
+//
+//            $.ajax({
+//                contentType: "application/json; charset=uft-8",
+//                url: apiUrl,
+//                type: "POST",
+//                dataType: "json",
+//                data: JSON.stringify(dados),
+//                contentType: "application/json",
+//                success: function(resp) {
+//                    console.log(resp);
+//                    window.location.reload();
+//                },
+//                error: function(error) {
+//                    console.log(error);
+//                }
+//            })
+//
+//     } else{
+//         console.log("Não é")
+//         const dados = {"id":id, "nome":nome, "quantidade":quantidade, "valorUnitario":valor}
+//
+//             console.log(dados);
+//
+//             const apiUrl = `/api/alimentos/add`;
+//
+//             $.ajax({
+//                 contentType: "application/json; charset=uft-8",
+//                 url: apiUrl,
+//                 type: "POST",
+//                 dataType: "json",
+//                 data: JSON.stringify(dados),
+//                 contentType: "application/json",
+//                 success: function(resp) {
+//                     console.log(resp);
+//                     window.location.reload();
+//                 },
+//                 error: function(error) {
+//                     console.log(error);
+//                 }
+//             })
+//     }
+//
+//
+//
+//  }
 
 
 

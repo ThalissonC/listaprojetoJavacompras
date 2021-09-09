@@ -1,6 +1,7 @@
 package com.senac.projetopadrao.controllers;
 
 import com.senac.projetopadrao.models.Compra;
+import com.senac.projetopadrao.models.ItemComprado;
 import com.senac.projetopadrao.repositorys.ItemCompradoRepository;
 import com.senac.projetopadrao.repositorys.CompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,38 +12,36 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping({"/api/alimentos"})
+@RequestMapping({"/api/alimentos/comprados"})
 
-public class ApiController {
+public class ApiCompradosController {
 
-    @Autowired
-    CompraRepository compraRepository;
-    ItemCompradoRepository itemCompradoRepository;
+@Autowired
+CompraRepository compraRepository;
+ItemCompradoRepository itemCompradoRepository;
 
-    ApiController(CompraRepository compraRepository){
-        this.compraRepository = compraRepository;
+    ApiCompradosController(ItemCompradoRepository itemCompradoRepository){
+        this.itemCompradoRepository = itemCompradoRepository;
     }
 
-
-
     @GetMapping
-    public ArrayList<Compra> findAll() {
-        return (ArrayList<Compra>) compraRepository.findAll();
+    public ArrayList<ItemComprado> findAll() {
+        return (ArrayList<ItemComprado>) itemCompradoRepository.findAll();
     }
 
 
     // Adiciona Dados
     @PostMapping("/add")
-    public Compra create(@RequestBody Compra compra){
-        return compraRepository.save(compra);
+    public ItemComprado create(@RequestBody ItemComprado itemComprado){
+        return itemCompradoRepository.save(itemComprado);
     }
 
     // Recebe Dados
     @GetMapping(path = {"/alimento/{id}"})
     public ResponseEntity findById(@PathVariable Long id){
-        return compraRepository.findById(id)
-                .map(record -> ResponseEntity.ok().body(record))
-                .orElse(ResponseEntity.notFound().build());
+       return itemCompradoRepository.findById(id)
+               .map(record -> ResponseEntity.ok().body(record))
+               .orElse(ResponseEntity.notFound().build());
     }
 
     // Edição
@@ -92,13 +91,27 @@ public class ApiController {
 
     // Delete
     @GetMapping("/deletar/{id}")
-    public RedirectView deletar(@PathVariable(value = "id") Long id){
+    public String deletar(@PathVariable(value = "id") Long id){
 
         Compra compra = compraRepository.findAlimentoById(id);
         compraRepository.delete(compra);
 
-        return new RedirectView("/");
+        //(id=${alimento.id})
+        return "redirect:/";
     }
 
+    // Delete
+    @GetMapping("/deletarComprado/{id}")
+    public RedirectView deletarItemComprado(@PathVariable(value = "id") Long id){
+
+        ItemComprado itemComprado = itemCompradoRepository.findAlimentoCompradoById(id);
+        itemCompradoRepository.delete(itemComprado);
+
+        //(id=${alimento.id})
+        return new RedirectView("/itensComprados");
+    }
 
 }
+
+
+

@@ -1,26 +1,37 @@
 package com.senac.projetopadrao.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Entity
-public class Higiene implements Serializable {
+
+
+
+public class Compra implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private int quantidade;
+    @Column(name = "quantidade", nullable = false, columnDefinition = "int DEFAULT 1")
+    private int quantidade; //int
     private String categoria;
-    private double valorUnitario;
+    private double valorUnitario; //double
     private String formaDePagamento;
     private String parcelas;
-    private double valorTotal = quantidade * valorUnitario;
+    //private double valorTotal = quantidade * valorUnitario;
     private String data;
+    private String dataArquivada;
+
     //private String somaTotal;
+
 
     public Long getId() {
         return id;
@@ -35,7 +46,18 @@ public class Higiene implements Serializable {
     }
 
     public void setNome(String nome) {
+
         this.nome = nome;
+
+
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public int getQuantidade() {
@@ -54,14 +76,6 @@ public class Higiene implements Serializable {
         this.valorUnitario = valorUnitario;
     }
 
-    public double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
     //public String getSomaTotal() {
      //   return somaTotal;
     //}
@@ -70,13 +84,6 @@ public class Higiene implements Serializable {
      //   this.somaTotal = somaTotal;
     //}
 
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
 
     public String getFormaDePagamento() {
         return formaDePagamento;
@@ -101,5 +108,16 @@ public class Higiene implements Serializable {
 
     public void setData(String data) {
         this.data = data;
+//        this.dataArquivada = data;
     }
+
+    public String getDataArquivada() {
+        return dataArquivada;
+    }
+
+    public void setDataArquivada(String dataArquivada) {
+        this.dataArquivada = dataArquivada;
+        this.data = dataArquivada;
+    }
+
 }

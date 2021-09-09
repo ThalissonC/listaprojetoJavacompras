@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/espacamentos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+    <script type="text/javascript" src="../static/js/elements.js" th:src="@{/js/elements.js}"></script>
+    <script type="text/javascript" src="../static/js/tables.js" th:src="@{/js/tables.js}"></script>
+
+    <!-- Título da página -->
+    <title>Lista De Alimentos</title>
+
+
+
+
+</head>
+<body>
+
+
+<div class="row">
+    <!-- 1° coluna -->
+    <div class="col-sm">
+
+
+    </div>
+
+    <div class="col-sm text-center">
+        <div class="sp-20b"> </div>
+        <h1 id="tituloPage" class="text-center text-light fw-bold" style="filter: contrast(300%);">Lista de Alimentos</h1>
+
+
+        <!---------------------->
+        <!------ADD BUTTON------->
+        <!--------- \/---------->
+
+        <div>
+            <a href="localhost:8080" class="text-success floatButton" onclick="exibirCamposDeAdicao()">
+                <i class="fa fa-plus my-float floatButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-plus-lg floatButton" viewBox="0 -2 16 20">
+                        <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+                    </svg>
+                </i>
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="sp-20b"></div>
+                    <a id="" style="display: none;" onclick="diminuirPontoTable(), AlterarTable_e_Conteudo()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-arrow-left text-danger" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        </svg>
+                    </a>
+
+                    <h4>
+                        <p id="tableValor"> </p>
+                    </h4>
+
+                    <a id="btAdicionarPontoTabela" style="display: none;" onclick="adicionarPontoTable(), AlterarTable_e_Conteudo(), recebeResp()" th:href="@{/itensComprados}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-arrow-right text-danger" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                        </svg>
+                    </a>
+
+            </div>
+        </div>
+
+        <!-- 2° coluna -->
+        <div class="col sp-20b">
+
+
+
+        </div>
+        <div class="sp-40b"> </div>
+
+        <div class="card" style="height: 30rem; border-radius:50px;">
+            <div class="card-body">
+                <div class="sp-10b"></div>
+                <div class="row">
+                    <div class="col">
+                        <input id="inputId" type="text" class="inputText-s hidden" placeholder="Id"> <input id="inputNome" type="text" class="" placeholder="Nome" style="visibility: collapse;"> <input id="inputQtd" class="inputText-s" type="text" placeholder="Qtd." style="visibility: collapse;"> <input id="inputValorUnitario" class="inputText-m" type="text" placeholder="Valor" style="visibility: collapse;">
+                        <a onclick="adicionarAlimento()">
+                            <svg xmlns="http://www.w3.org/2000/svg" id="botaoAdd" width="18" height="18" fill="currentColor" class="bi bi-check-circle text-primary inputText-s hidden" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                            </svg>
+                        </a>
+                        <a onclick="esconderCamposDeAdicao()">
+                            <svg xmlns="http://www.w3.org/2000/svg" id="cancelarAdicao" width="20" height="20" fill="currentColor" class="bi bi-x-lg bt-small-m text-warning hidden" viewBox="0 0 16 16">
+                                <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="row">
+                        <hr class="bord">
+                </div>
+
+                <!-- ADD PAGE -->
+                <div class="col sp-3" style="">
+                    <div class="container align-center">
+                        <table class="table table-hover text-center">
+
+                            <thead style="visibility: hidden;">
+                                <tr style="visibility: hidden;">
+    <!--                                <td style="visibility: hidden;" scope="col"></td>-->
+    <!--                                <td style="visibility: hidden;" scope="col">Data</td>-->
+
+                                </tr>
+                            </thead>
+
+                            <!-- -->
+                            <div id="margemDeAdicao"></div>
+
+                            <!-- ------------------------------- -->
+                            <!--       ____________________      -->
+                            <!--       # TABELA DOS ITENS #      -->
+                            <!--       |    DA LISTA      |      -->
+                            <!--       #                  #      -->
+                            <!--       |                  |      -->
+                            <!--       #       \  /       #      -->
+                            <!--                \/               -->
+                            <!-- ------------------------------- -->
+
+                            <div>
+                                <tbody id="tabelaItensDaLista">
+                                    <tr th:each="compra : ${index}" style="border: none; border: 0px">
+                                        <td>
+                                            <a id="nomeCompra" th:text="${compra.nome}" th:href="@{/getOne/(id=${compra.id})}" class="btn text-primary float sp-20b" data-bs-toggle="modal" data-bs-target="#editModal"></a>
+                                        </td>
+                                        <td id="quantidadeCompra" th:text="${compra.quantidade}" class=""></td>
+
+                                        <td>
+                                            <!-- BOTÃO DELETAR ITEM -->
+                                            <a th:href="@{deletar/{id}(id=${compra.id})}" id="btDeletarRedirect" onclick="btDelRedirect()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  fill="currentColor" class="bi bi-x-lg bt-small-m text-danger" viewBox="0 0 16 16">
+                                                    <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </div>
+
+
+                            <!-- ------------------------------  -->
+                            <!--                                 -->
+                            <!--        TABELA DOS ITENS         -->
+                            <!--          JÁ COMPRADOS           -->
+                            <!--                                 -->
+                            <!--              \  /               -->
+                            <!--               \/                -->
+                            <!-- ------------------------------- -->
+
+
+
+                        </table>
+
+                    </div>
+
+
+                    <!------------ ADD MODAL ------------>
+                    <!----------------\/----------------->
+                    <!----------------\/----------------->
+
+                    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <form th:action="@{/addNew}" method="post">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Adicionar compra</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Nome:</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="nome">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Categoria:</label>
+                                            <select class="form-select" aria-label="Default select example" id="recipient-name"
+                                                    name="categoria">
+                                                <option selected class="text-center">Selecione a categoria</option>
+                                                <option value="Acougue">Acougue</option>
+                                                <option value="Bebidas">Bebidas</option>
+                                                <option value="Congelados">Congelados</option>
+                                                <option value="Doces">Doces</option>
+                                                <option value="Eletro">Eletro</option>
+                                                <option value="Higiene">Higiene</option>
+                                                <option value="Horifruti">Hortifruti</option>
+                                                <option value="Limpeza">Limpeza</option>
+                                                <option value="Mercenaria">Mercearia</option>
+
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Quantidade:</label>
+                                            <input type="text" class="form-control" id="recipient-name"
+                                                   name="quantidade">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Valor:</label>
+                                            <input type="text" class="form-control" id="recipient-name"
+                                                   name="valorUnitario">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Data:</label>
+                                            <input type="text" placeholder="ex: 05-06-21"
+                                                   class="form-control text-center" id="recipient-name" name="dataArquivada">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Comprado</label>
+                                            <input type="text" placeholder="sim ou não"
+                                                   class="form-control text-center" id="recipient-name" name="comprado">
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="container">
+                                            <button type="button" class="btn btn-secondary text-light text-start"
+                                                    data-bs-dismiss="modal">Fechar
+                                            </button>
+                                            <button type="submit" class="btn btn-primary text-end">Salvar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!------------ &EDIT MODAL ------------->
+                    <!-----------------\/------------------->
+                    <!-----------------\/------------------->
+
+                    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+                         aria-hidden="true">
+                        <form th:action="@{/update}" method="put">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editModalLabel">Editar compra</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group" style="display: none;">
+                                            <label for="recipient-name" class="col-form-label">Id</label>
+                                            <h4 type="text" class="form-control" id="idEdit" name="idEdit"></h4>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Nome</label>
+                                            <input type="text" class="form-control" id="nomeEdit" name="nomeEdit">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Categoria</label>
+                                            <select class="form-select" aria-label="Default select example" id="categoriaEdit"
+                                                    name="categoriaEdit">
+                                                <option selected class="text-center">Selecione a categoria</option>
+                                                <option value="Acougue">Acougue</option>
+                                                <option value="Bebidas">Bebidas</option>
+                                                <option value="Congelados">Congelados</option>
+                                                <option value="Doces">Doces</option>
+                                                <option value="Eletro">Eletro</option>
+                                                <option value="Higiene">Higiene</option>
+                                                <option value="Horifruti">Hortifruti</option>
+                                                <option value="Limpeza">Limpeza</option>
+                                                <option value="Mercenaria">Mercearia</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Quantidade</label>
+                                            <input type="text" class="form-control" id="quantidadeEdit"
+                                                   name="quantidadeEdit">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Valor</label>
+                                            <input type="text" class="form-control" id="valorUnitarioEdit"
+                                                   name="valorUnitarioEdit">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Data</label>
+                                            <input type="text" class="form-control" id="dataEdit" name="dataEdit">
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="container">
+                                            <div class="d-grid gap-2 d-md-block">
+
+                                                <button  type="button" onclick="updateAlimento()" data-bs-dismiss="modal"
+                                                        class="btn btn-primary text-end">Salvar
+                                                </button>
+                                                <!--                                            <button type="button" data-bs-dismiss="modal" class="btn-danger text-end" onclick="deleteAlimento()"> Deletar </button>-->
+                                                <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                                        data-bs-dismiss="modal" class="btn btn-danger text-end"> Deletar
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!------------ X-DELETE MODAL ------------->
+                    <!-------------------\/-------------------->
+                    <!-------------------\/-------------------->
+
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="ModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4 for="recipient-name" class="sp-10b">Tem certeza que deseja deletar este item
+                                        ?</h4>
+
+                                    <div class="sp-10b">
+                                        <button type="button" data-bs-dismiss="modal"
+                                                class="btn btn-primary text-end float" aria-label="Close"> Não
+                                        </button>
+
+                                        <button type="button" data-bs-dismiss="modal" class="btn btn-danger text-end float">
+                                              Sim
+                                        </button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center d-grid gap-2 d-md-block">
+                        <button type="button" id="btMarcarCompra" class="btn btn-primary hidden" onclick="exibir()">Salvar</button>
+<!--                        <button type="button" onclick="updateAlimentoComprado()" data-bs-dismiss="modal"-->
+<!--                                class="btn btn-primary text-end">Salvar Alimento-->
+<!--                        </button>-->
+                    </div>
+                </div>
+
+                <!-- TOTAL -->
+                <!----------->
+                <!--                <td colspan="2"><h3> Total </h3></td>-->
+                <!--                <br>-->
+                <!--                <td th:text="${#numbers.formatCurrency(#aggregates.sum(alimentos.![valorUnitario]))}">R$ 0,00</td>-->
+
+<!--                <div>-->
+<!--                   <img src="../css/checkimage.png" style="background-color: blue;">-->
+<!--                </div>-->
+
+<!--                    <div class="gif">-->
+<!--                       <img src="../css/giphy.gif" >-->
+<!--                    </div>-->
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 3° coluna -->
+    <div class="col-sm">
+        <div id="space-bottom" class="rp-sp-63b"> </div>
+            <a id="aAdicionarPontoTabela" onclick="adicionarPontoTable(), AlterarTable_e_Conteudo(), recebeResp()" th:href="@{/itensComprados}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" fill="currentColor" class="bi bi-arrow-right-circle-fill text-danger bg-light" style="border-radius: 44px;" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                </svg>
+            </a>
+
+    </div>
+
+
+</div>
+
+
+<div class="row text-center">
+
+</div>
+
+<script type="text/javascript" src="../static/js/tables.js" th:src="@{/js/tables.js}"></script>
+
+
+
+</body>
+</html>

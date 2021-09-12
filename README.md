@@ -66,5 +66,4 @@ Nós usamos [GitHub](https://github.com/) para controle de versão. Para conferi
 ## ✒️ Autores
 
 * ** Desenvolvedor** - ****Thalisson**** - (https://github.com/ThalissonC)
-* ** Documentação e Slide** - **Leonardo** ** e ** **Weverton** 
-* ** Design** - ** Felipe**
+* ** Documentação e Slide** - **Leonardo** ** , **Weverton** e **Felipe** 

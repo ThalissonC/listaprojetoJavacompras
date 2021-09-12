@@ -25,7 +25,7 @@
 //    }
 //}
 
-alert
+
 
 // Definir data atual da adição do item a lista
 var data = new Date();
